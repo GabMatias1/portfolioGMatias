@@ -1,0 +1,38 @@
+body{
+background-color: #1d4052;
+color: #ffffff;
+font-size: 30px;
+}
+h1{
+    margin-top: 50px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ul{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    
+    
+}
+ li p{
+    margin: 30px;
+}
+ul{
+    list-style-type: none;
+}
+main{
+    margin-top: 100px;
+    background-color: #446e87;
+}
+.qdr{
+    width: 1904px;
+    height: 150px;
+    background-color: #446e87;
+    z-index: -1;
+    position:absolute;
+    align-items: center;
+    margin-top: -40px;
+    }

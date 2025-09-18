@@ -1,0 +1,72 @@
+body{
+        background-color: #1d4052;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        
+}
+/*Todos os Titulos Principais*/
+h1{
+        margin-top: 30px;
+        text-align: center;
+        color: #ffffff;
+}
+
+/*Lista Professores*/
+.ProfL{ 
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+/*Lista Professores Nomes*/
+.ProfL p{ 
+        
+        font-size: 20px;
+        margin-top: -30px;
+        color: #ffffff;
+        justify-content: center;
+}
+
+/*Lista Professores Imagens*/
+.ProfL img{
+    height: 100px;
+    width: 100px;
+    margin-top: -4px;
+    border-radius: 100%;
+}
+
+/*Espaçamento Kercia-imagem*/
+.Ker{
+        margin: 30px;
+}
+/*Espaçamento claudia-imagem*/
+.Cla{
+        margin: 30px;
+}
+
+/*Cor de fundo main*/
+main{
+        background-color: #446e87;
+}
+/*Lista atividades organizada*/
+ul{
+        display: flex;
+        list-style-type: none;
+        justify-content: space-evenly;
+        text-align: center;
+        color: #ffffff;
+        display: inline-block;
+}
+/*Crescer imagem*/
+ul img:hover{
+        transform: scale(1.5);
+        transition: transform 0.3s ease-out;
+}
+ul img{
+        border-radius: 25%;
+}
+
+/*Girar mapa mental*/
+/*ul .Mp1 img:hover{
+        transform: rotate(-90deg)
+        
+}*/

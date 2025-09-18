@@ -1,0 +1,21 @@
+body{
+    background-color: #1d4052;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+    text-align: center;
+    margin-top: 50px;
+    color: #e0e8e6;
+     font-size: 50px;
+}
+.Pdv{
+    text-align: center;
+}
+main .Pdv img{
+    height: 30%;
+    width: 50%;
+}
+
+main{
+    background-color: #446e87;
+}
