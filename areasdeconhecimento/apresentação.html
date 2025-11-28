@@ -5,147 +5,450 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ApresentaçãoPortfólio</title>
     <link rel="stylesheet" href="natureza.css">
+    <style>
+        /* Estilos existentes */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1d4052;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1d4052;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #ffffff;
+            padding-bottom: 10px;
+            margin-top: 30px;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+        h3 {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 15px;
+            background-color: #446e87; 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+            transition: transform 0.3s ease; 
+            border: none;
+        }
+        .carousel-container:hover {
+            transform: translateY(-5px); 
+        }
+
+        .carousel-slide {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 600px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            padding: 0; 
+            margin-top: -22px;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.6s ease;
+            border-radius: 50%; 
+            user-select: none;
+            background-color: rgba(114, 163, 191, 0.7); 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .next {
+            right: 10px; 
+            border-radius: 50%;
+        }
+        .prev {
+            left: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: #72a3bf; 
+        }
+
+        .carousel-slide h3 {
+            color: #ffffff; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0;
+            line-height: 1.2;
+            padding-top: 5px;
+        }
+        
+        .carousel-slide h3:first-child, .Atv1 {
+            color: #1d4052; 
+            font-size: 1.8em;
+            font-weight: 900;
+            border-bottom: 3px solid #72a3bf; 
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            background-color: #ffffff; 
+            border-radius: 5_0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+        }
+
+        hr {
+            border: none;
+            height: 6px;
+            background-color: #72a3bf; 
+            border-radius: 3px;
+            margin: 40px 0;
+            opacity: 0.8; 
+        }
+
+        footer {
+            background-color: #1d4052;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-top: 2px solid #446e87;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* NOVOS ESTILOS PARA O MODAL */
+        .modal-overlay {
+            /* Escondido por padrão */
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); 
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #2e576e; 
+            color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            /* Inicia fora da tela, no fundo (100% da altura da Viewport), para a animação */
+            transform: translateY(100vh); 
+            transition: transform 1s ease-out; 
+        }
+
+        /* Estado visível acionado pelo JS */
+        .modal-overlay.visible .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-content h3 {
+            text-align: center;
+            border-bottom: 2px solid #72a3bf;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .modal-content strong {
+            color: #72a3bf;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #cccccc;
+            background: none;
+            border: none;
+        }
+
+        .close-button:hover {
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
     <main>
     <br><h1>Atividades Escolhidas</h1>
         <hr>
-            <h1>Linguagens</h1>
             
-            <nav>
-                <ul>                   
-                    <li>
-                        <h2 class="Atv1">Eixo 1</h2>
-                        <h3>Apresentação My Vacations<br>(03/02)</h3>
-                        <img src="Atividades/2.png" height="400" width="300">
-                    </li>
-                   <li>
-                        <h2 class="Atv1">Eixo 2</h2>
-                        <h3>Seminário Repetórios<br>(12/05)</h3>
-                        <img src="Atividades/repertorios.png" height="400" width="300">
-                    </li>
-                     <li>
-                        <h2 class="Atv1">Eixo 3</h2>
-                        <h3>Apresentação My Vacations<br>(03/02)</h3>
-                        <img src="img/fnula.png" height="400" width="300">
-                    </li>
-                     <li>
-                        <h2 class="Atv1">Eixo 4</h2>
-                        <h3>Apresentação My Vacations<br>(03/02)</h3>
-                        <img src="img/fnula.png" height="400" width="300">
-                    </li>
-                </ul>
-            </nav><br><br><hr>
+        <h1>Linguagens</h1>
+        <div class="carousel-container" id="ling-carousel">
+            <div class="carousel-slide">
+                <h3>Eixo 1</h3>
+                <h3>Apresentação My Vacations <br>(03/02)</h3>
+                <img src="Atividades/2.png">
+            </div>
+            <div class="carousel-slide">
+                <h3>Eixo 2</h3>
+                <h3> Seminário Repetórios<br>(12/05)</h3>
+                <img src="Atividades/repertorios.png">    
+            </div>
+            <div class="carousel-slide">
+                <h3>Eixo 3</h3>
+                <h3> Mapa Mental 3ª Fase <br>Modernismo<br>(04/08)</h3>
+                <img src="Atividades/MapaMental 3fasemodernismo.png">
+            </div>
+            <a class="prev" onclick="plusSlides(-1, 'ling-carousel')">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 'ling-carousel')">&#10095;</a>
+        </div>
+        <br><br><hr>
             
-            <h1>Ciências Humanas</h1>  
-            <nav>
-                <ul>                   
-                    <li>
-                        <h2 class="Atv1">Eixo 1</h2>
-                        <h3>Seminário Países<br>(10/03)</h3>
-                        <img src="Atividades/2.png" height="400" width="300">
-                    </li>
-                   <li>
-                        <h2 class="Atv1">Eixo 2</h2>
-                        <h3>Mapa Bental Biomas<br>(29/04)</h3>
-                        <img src="Atividades/mbiomas.png" height="400" width="300">
-                    </li>
-                     <li>
-                        <h2 class="Atv1">Eixo 3</h2>
-                        <h3>Apresentação My Vacations<br>(03/02)</h3>
-                        <img src="img/fnula.png" height="400" width="300">
-                    </li>
-                     <li>
-                        <h2 class="Atv1">Eixo 4</h2>
-                        <h3>Apresentação My Vacations<br>(03/02)</h3>
-                        <img src="img/fnula.png" height="400" width="300">
-                    </li>
-                </ul>
-            </nav>
-            <br><br>
-            <hr>
-            <h1>Ciências da Natureza</h1>
-             <nav>
-                <ul>                   
-                     <li>
-                        <h2 class="Atv1">Eixo 1</h2>
-                        <h3>Mapametal Cadeias Cabonicas <br>(28/01)</h3>
-                        <img src="Atividades/funções.png" height="400" width="300">
-                    </li>
-                    <li>
-                        <h2 class="Atv1">Eixo 2</h2>
-                        <h3>Seminário Indústria do Lixo <br>(22/04)</h3>
-                        <img src="Atividades/Industria.png" height="400" width="300">
-                    </li>
-                  
-                     <li>
-                        <h2 class="Atv1">Eixo 3</h2>
-                        <h3>Apresentação My Vacations<br>(03/02)</h3>
-                        <img src="img/fnula.png" height="400" width="300">
-                    </li>
-                     <li>
-                        <h2 class="Atv1">Eixo 4</h2>
-                        <h3>Apresentação My Vacations<br>(03/02)</h3>
-                        <img src="img/fnula.png" height="400" width="300">
-                    </li>
-                </ul>
-            </nav>
-            <br><br>
-            <hr>
-            <h1>Matemática</h1>
-             <nav>
-                <ul>                   
-                    <li>
-                        <h2 class="Atv1">Eixo 1</h2>
-                        <h3>Cartolina Gráficos<br>(03/02)</h3>
-                        <img src="Atividades/cartolina.png" height="400" width="300">
-                    </li>
-                   <li>
-                        <h2 class="Atv1">Eixo 2</h2>
-                        <h3>Dominó das 4 Cores <br>(07/04)</h3>
-                        <img src="Atividades/dominó.png" height="400" width="300">
-                    </li>
-                     <li>
-                        <h2 class="Atv1">Eixo 3</h2>
-                        <h3>Apresentação My Vacations<br>(03/02)</h3>
-                        <img src="img/fnula.png" height="400" width="300">
-                    </li>
-                     <li>
-                        <h2 class="Atv1">Eixo 4</h2>
-                        <h3>Apresentação My Vacations<br>(03/02)</h3>
-                        <img src="img/fnula.png" height="400" width="300">
-                    </li>
-                </ul>
-            </nav>
-            <br><br>
-            <hr>
-            <h1>SENAI</h1>
-             <nav>
-                <ul>                   
-                    <li>
-                        <h2 class="Atv1">Eixo 1</h2>
-                        <h3>Protótipo Site <br>(26/02)</h3>
-                        <img src="Atividades/14.png" height="400" width="300">
-                    </li>
-                   <li>
-                        <h2 class="Atv1">Eixo 2</h2>
-                        <h3>Mapa Bental Biomas<br>(29/04)</h3>
-                        <img src="Atividades/mbiomas.png" height="400" width="300">
-                    </li>
-                     <li>
-                        <h2 class="Atv1">Eixo 3</h2>
-                        <h3>Apresentação My Vacations<br>(03/02)</h3>
-                        <img src="img/fnula.png" height="400" width="300">
-                    </li>
-                     <li>
-                        <h2 class="Atv1">Eixo 4</h2>
-                        <h3>Apresentação My Vacations<br>(03/02)</h3>
-                        <img src="img/fnula.png" height="400" width="300">
-                    </li>
-                </ul>
-            </nav>
-            <br><br>
+        <h1>Ciências Humanas</h1>  
+        <div class="carousel-container" id="humanas-carousel">
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 1</h2>
+                <h3>Seminário Países<br>(10/03)</h3>
+                <img src="Atividades/2.png" height="400" width="300">
+            </div>
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 2</h2>
+                <h3>Mapa Bental Biomas<br>(29/04)</h3>
+                <img src="Atividades/mbiomas.png" height="400" width="300">
+            </div>
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 3</h2>
+                <h3>Apresentação My Vacations<br>(03/02)</h3>
+                <img src="img/fnula.png" height="400" width="300">
+            </div>
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 4</h2>
+                <h3>Apresentação My Vacations<br>(03/02)</h3>
+                <img src="img/fnula.png" height="400" width="300">
+            </div>
+            <a class="prev" onclick="plusSlides(-1, 'humanas-carousel')">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 'humanas-carousel')">&#10095;</a>
+        </div>
+        <br><br>
+        <hr>
+        
+        <h1>Ciências da Natureza</h1>
+        <div class="carousel-container" id="natureza-carousel">
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 1</h2>
+                <h3>Mapametal Cadeias Cabonicas <br>(28/01)</h3>
+                <img src="Atividades/funções.png" height="400" width="300">
+            </div>
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 2</h2>
+                <h3>Seminário Indústria do Lixo <br>(22/04)</h3>
+                <img src="Atividades/Industria.png" height="400" width="300">
+            </div>
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 3</h2>
+                <h3>Apresentação My Vacations<br>(03/02)</h3>
+                <img src="img/fnula.png" height="400" width="300">
+            </div>
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 4</h2>
+                <h3>Apresentação My Vacations<br>(03/02)</h3>
+                <img src="img/fnula.png" height="400" width="300">
+            </div>
+            <a class="prev" onclick="plusSlides(-1, 'natureza-carousel')">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 'natureza-carousel')">&#10095;</a>
+        </div>
+        <br><br>
+        <hr>
+        
+        <h1>Matemática</h1>
+        <div class="carousel-container" id="matematica-carousel">
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 1</h2>
+                <h3>Cartolina Gráficos<br>(03/02)</h3>
+                <img src="Atividades/cartolina.png" height="400" width="300">
+            </div>
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 2</h2>
+                <h3>Dominó das 4 Cores <br>(07/04)</h3>
+                <img src="Atividades/dominó.png" height="400" width="300">
+            </div>
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 3</h2>
+                <h3>Apresentação My Vacations<br>(03/02)</h3>
+                <img src="img/fnula.png" height="400" width="300">
+            </div>
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 4</h2>
+                <h3>Apresentação My Vacations<br>(03/02)</h3>
+                <img src="img/fnula.png" height="400" width="300">
+            </div>
+            <a class="prev" onclick="plusSlides(-1, 'matematica-carousel')">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 'matematica-carousel')">&#10095;</a>
+        </div>
+        <br><br>
+        <hr>
+        
+        <h1>SENAI</h1>
+        <div class="carousel-container" id="senai-carousel">
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 1</h2>
+                <h3>Protótipo Site <br>(26/02)</h3>
+                <img src="Atividades/14.png" height="400" width="300">
+            </div>
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 2</h2>
+                <h3>Mapa Bental Biomas<br>(29/04)</h3>
+                <img src="Atividades/mbiomas.png" height="400" width="300">
+            </div>
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 3</h2>
+                <h3>Apresentação My Vacations<br>(03/02)</h3>
+                <img src="img/fnula.png" height="400" width="300">
+            </div>
+            <div class="carousel-slide">
+                <h2 class="Atv1">Eixo 4</h2>
+                <h3>Apresentação My Vacations<br>(03/02)</h3>
+                <img src="img/fnula.png" height="400" width="300">
+            </div>
+            <a class="prev" onclick="plusSlides(-1, 'senai-carousel')">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 'senai-carousel')">&#10095;</a>
+        </div>
+        <br><br>
     </main>
     
+    <div id="direitosDeUsoModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+            <h3>Direitos de Uso</h3>
+            <p>Todo o conteúdo presente neste portfólio, incluindo textos, imagens e projetos, está protegido por **direitos autorais**.</p>
+            <p><strong>Uso Pessoal e Avaliativo:</strong> Você pode visualizar e interagir com este portfólio para fins de avaliação profissional e recrutamento.</p>
+            <p><strong>Proibido:</strong> É estritamente proibida a reprodução, distribuição, ou utilização comercial de qualquer parte deste conteúdo sem a **autorização prévia e por escrito** do autor: Gabriel Matias.</p>
+            <p>Para solicitações de uso ou dúvidas, por favor, entre em contato através dos canais disponibilizados no site.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        let slideIndex = {
+            'ling-carousel': 1,
+            'humanas-carousel': 1,
+            'natureza-carousel': 1,
+            'matematica-carousel': 1,
+            'senai-carousel': 1
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            for (const id in slideIndex) {
+                showSlides(1, id);
+            }
+
+            // 3. NOVO CÓDIGO JAVASCRIPT PARA O MODAL
+            const modal = document.getElementById('direitosDeUsoModal');
+            const closeBtn = document.querySelector('.close-button');
+            let hasShownModal = false;
+
+            // Função para mostrar o modal
+            function showUsageRightsModal() {
+                if (hasShownModal) return;
+                
+                // 1. Torna o overlay visível (display: flex)
+                modal.style.display = 'flex'; 
+                // 2. Adiciona a classe 'visible' para acionar a transição (transform: translateY(0))
+                setTimeout(() => {
+                    modal.classList.add('visible');
+                }, 10); 
+
+                hasShownModal = true;
+            }
+
+            // Função para fechar o modal
+            function closeUsageRightsModal() {
+                // Remove a classe 'visible' para iniciar a transição de saída
+                modal.classList.remove('visible');
+                // Oculta o overlay após a transição (1 segundo)
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 1000); 
+            }
+            
+            // Fecha ao clicar no botão 'x'
+            closeBtn.onclick = closeUsageRightsModal;
+
+            // Fecha ao clicar fora do conteúdo do modal (no overlay)
+            modal.onclick = (e) => {
+                if (e.target === modal) {
+                    closeUsageRightsModal();
+                }
+            };
+
+
+            // Evento de rolagem para verificar se o usuário chegou ao final
+            window.addEventListener('scroll', () => {
+                // window.innerHeight: Altura da janela visível (viewport)
+                // window.scrollY: Posição de rolagem atual
+                // document.body.offsetHeight: Altura total do conteúdo da página
+                
+                // Verifica se a parte inferior da viewport alcançou 95% da altura total do documento
+                const scrollThreshold = 0.95; 
+
+                if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight * scrollThreshold)) {
+                    showUsageRightsModal();
+                }
+            });
+            // FIM CÓDIGO JAVASCRIPT PARA O MODAL
+        });
+
+        function plusSlides(n, carouselId) {
+            showSlides(slideIndex[carouselId] += n, carouselId);
+        }
+
+        function showSlides(n, carouselId) {
+            let i;
+            let container = document.getElementById(carouselId);
+            if (!container) return;
+            
+            let slides = container.getElementsByClassName("carousel-slide");
+            
+            if (n > slides.length) {slideIndex[carouselId] = 1}
+            if (n < 1) {slideIndex[carouselId] = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex[carouselId]-1].style.display = "block";
+        }
+    </script>
 </body>
 </html>
